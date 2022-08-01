@@ -3,16 +3,8 @@ import javax.swing.JPanel;
 
 public class Graph extends JPanel {
     
-    int[][] points = {
+    public static int[][] points = new int [11][2];
 
-        {0,0},
-        {10,25},
-        {40,40},
-        {60,60},
-        {80,80},
-        {100,100}
-
-    };
 
     public Graph()
     {
@@ -27,13 +19,13 @@ public class Graph extends JPanel {
         g.setColor(Color.decode("#3d5a80") );
         g.drawRect(0, 0, Main.graphWidth-1, Main.graphHeight-1);
 
-        for(int i=0; i<Main.graphWidth;i+=((double)Main.graphWidth/10.0))
+        for(double i=0.0; i<Main.graphWidth;i+=((double)Main.graphWidth/10.0))
         {
-            g.drawLine(i, 0, i, Main.graphHeight);
+            g.drawLine((int)i, 0, (int)i, Main.graphHeight);
         }
-        for(int i=0; i<Main.graphHeight;i+=((double)Main.graphHeight/10.0))
+        for(double i=0; i<Main.graphHeight;i+=((double)Main.graphHeight/10.0))
         {
-            g.drawLine(0,i,Main.graphWidth,i);
+            g.drawLine(0,(int)i,Main.graphWidth,(int)i);
         }
 
         for(int i=0; i<points.length-1; i++)
